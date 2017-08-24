@@ -23,7 +23,7 @@ public class Cliente {
     
         try {
             client cli = new client();
-            long intevalPeriod = 2;
+            long intevalPeriod = 1;
             //scheduleAtFixedRate(Runnable command,long initialDelay,long period,TimeUnit unit)
             service.scheduleAtFixedRate(cli, 0, intevalPeriod, TimeUnit.MINUTES);
         } catch (IOException ex) {

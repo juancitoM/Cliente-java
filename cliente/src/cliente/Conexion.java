@@ -11,8 +11,8 @@ import java.net.Socket;
 
 public class Conexion {
 
-    protected final int PUERTO = 5050; //Puerto para la conexión
-    protected final String HOST = "localhost"; //Host para la conexión
+    protected final int PUERTO = 5600; //Puerto para la conexión
+    protected final String HOST = "raspberry.myvnc.com"; //Host para la conexión
     protected String mensajeServidor; //Mensajes entrantes (recibidos) en el servidor
     protected ServerSocket ss; //Socket del servidor
     protected Socket cs; //Socket del cliente
