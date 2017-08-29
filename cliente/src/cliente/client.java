@@ -1,11 +1,11 @@
 package cliente;
 
 import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.ConnectException;
 
 
 
@@ -30,16 +30,12 @@ public class client extends Conexion implements Runnable {
             BufferedReader entrada = new BufferedReader(new InputStreamReader(cs.getInputStream()));
             while ((mensajeServidor = entrada.readLine()) != null){ //Mientras haya mensajes desde el cliente
                 System.out.println(mensajeServidor);
-            }
+            }           
             cs.close();                      
-        }catch (EOFException e){
-            e.printStackTrace();
-        } catch (IOException ex) {
+        }catch(ConnectException e) {
+            System.out.println("No hay conexion con el servidor");
+        }catch (IOException ex) {
             ex.printStackTrace();
-        }/* catch (InterruptedException ex) {
-
-        }*/
-
+        }
     }
-
 }
